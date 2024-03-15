@@ -13,10 +13,14 @@ const PricingList = () => {
           <h4 className="h4 mb-4">{item.title}</h4>
           <p className="body-2 min-h-[4rem] mb-3 text-n-1/50">{item.description}</p>
           <div className="flex items-center h-[5.5rem] mb-6">
-            <>
-              <div className="h3">$</div>
-              <div className="text-[5.5rem] leading-none font-bold">{item.price}</div>
-            </>
+          {item.price && (
+              <>
+                <div className="h3">$</div>
+                <div className="text-[5.5rem] leading-none font-bold">
+                  {item.price}
+                </div>
+              </>
+            )}
           </div>
 
           <Button className="w-full mb-6" href={item.price ? '/pricing' : 'mailto:contact@contact.com'} white={!!item.price}>
